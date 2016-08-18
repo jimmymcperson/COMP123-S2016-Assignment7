@@ -15,7 +15,7 @@ using System.Windows.Forms;
  * Student#: 300869273
  * Date Modified: August 17, 2016
  * Description: Movie app work in progress
- * Version: 0.0.2 - Constructed forms and layouts.
+ * Version: 0.0.3 - Added functionality to SelectionForm.
  * ==================================================================================================
  */
 namespace MovieBonanzaApp
