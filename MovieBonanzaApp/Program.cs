@@ -11,7 +11,7 @@ using System.Windows.Forms;
  * Student#: 300869273
  * Date Modified: August 17, 2016
  * Description: Movie app work in progress
- * Version: 0.0.3 - Added functionality to SelectionForm.
+ * Version: 0.0.4 - Added MoviebonanzaAboutBox and added some event handlers to OrderForm.
  * ==================================================================================================
  */
 
@@ -29,6 +29,7 @@ namespace MovieBonanzaApp
         public static SelectionForm selectionForm;
         public static OrderForm orderForm;
         public static StreamForm streamForm;
+        public static MovieBonanzaAboutBox aboutBox;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -50,6 +51,7 @@ namespace MovieBonanzaApp
             selectionForm = new SelectionForm();
             orderForm = new OrderForm();
             streamForm = new StreamForm();
+            aboutBox = new MovieBonanzaAboutBox();
             Application.Run(splashForm);
         }
     }

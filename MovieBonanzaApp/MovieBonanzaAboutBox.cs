@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,37 +18,43 @@ using System.Windows.Forms;
  * Version: 0.0.4 - Added MoviebonanzaAboutBox and added some event handlers to OrderForm.
  * ==================================================================================================
  */
+
 namespace MovieBonanzaApp
-{
+{    
     /** <summary>
-    * This class defines a form for a splash screen.
+    * This class defines an "about" form for the app.
     * </summary>
     * 
-    * @class SplashScreen
+    * @class MovieBonanzaAboutBox
     * @extends Form
     */
-    public partial class SplashScreenForm : Form
+    public partial class MovieBonanzaAboutBox : Form
     {
-        public SplashScreenForm()
+        /** <summary>
+        * This is the default constructor.
+        * </summary>
+        *
+        * @method MovieBonanzaAboutBox
+        */
+        public MovieBonanzaAboutBox()
         {
             InitializeComponent();
+
         }
 
         /** <summary>
-        * This method closes the form after 3 seconds.
+        * This method closes the about window when the OK button is clicked.
         * </summary>
         *
-        * @method SplashScreenTimer_Tick
+        * @method OkButton_Click
         * @params {object} sender
         * @params {EventArgs} e
         * @private
         * @returns {void}
         */
-        private void SplashScreenTimer_Tick(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
-            SplashScreenTimer.Enabled = false;
             this.Hide();
-            Program.selectionForm.Show();
         }
     }
 }

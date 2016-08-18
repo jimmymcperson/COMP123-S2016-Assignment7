@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieBonanzaAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieBonanzaAboutBox.Designer.cs">
+      <DependentUpon>MovieBonanzaAboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="StreamForm.Designer.cs">
       <DependentUpon>StreamForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MovieBonanzaAboutBox.resx">
+      <DependentUpon>MovieBonanzaAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
