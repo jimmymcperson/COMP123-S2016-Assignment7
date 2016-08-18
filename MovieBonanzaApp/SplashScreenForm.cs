@@ -15,7 +15,7 @@ using System.Windows.Forms;
  * Student#: 300869273
  * Date Modified: August 17, 2016
  * Description: Movie app work in progress
- * Version: 0.0.1 - Initial commit.
+ * Version: 0.0.2 - Constructed forms and layouts.
  * ==================================================================================================
  */
 
@@ -49,7 +49,9 @@ namespace MovieBonanzaApp
         {
             SplashScreenTimer.Enabled = false;
             this.Hide();
-            Program.mainForm.Show();
+            Program.selectionForm.Show();
+            Program.orderForm.Show();
+            Program.streamForm.Show();
         }
     }
 }

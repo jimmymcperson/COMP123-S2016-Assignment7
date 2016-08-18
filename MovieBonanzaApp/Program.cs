@@ -11,7 +11,7 @@ using System.Windows.Forms;
  * Student#: 300869273
  * Date Modified: August 17, 2016
  * Description: Movie app work in progress
- * Version: 0.0.1 - Initial commit.
+ * Version: 0.0.2 - Constructed forms and layouts.
  * ==================================================================================================
  */
 
@@ -26,7 +26,9 @@ namespace MovieBonanzaApp
     public static class Program
     {
         public static SplashScreenForm splashForm;
-        public static SelectionForm mainForm;
+        public static SelectionForm selectionForm;
+        public static OrderForm orderForm;
+        public static StreamForm streamForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -45,8 +47,9 @@ namespace MovieBonanzaApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             splashForm = new SplashScreenForm();
-            mainForm = new SelectionForm();
-
+            selectionForm = new SelectionForm();
+            orderForm = new OrderForm();
+            streamForm = new StreamForm();
             Application.Run(splashForm);
         }
     }

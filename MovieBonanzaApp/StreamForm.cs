@@ -18,12 +18,11 @@ using System.Windows.Forms;
  * Version: 0.0.2 - Constructed forms and layouts.
  * ==================================================================================================
  */
-
 namespace MovieBonanzaApp
 {
-    public partial class SelectionForm : Form
+    public partial class StreamForm : Form
     {
-        public SelectionForm()
+        public StreamForm()
         {
             InitializeComponent();
         }

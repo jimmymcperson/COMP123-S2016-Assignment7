@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.SplashScreenTimer = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,11 +50,16 @@
             this.SplashScreenTimer.Interval = 3000;
             this.SplashScreenTimer.Tick += new System.EventHandler(this.SplashScreenTimer_Tick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // SplashScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(480, 300);
             this.ControlBox = false;
             this.Controls.Add(this.LogoPictureBox);
@@ -71,5 +77,6 @@
 
         private System.Windows.Forms.PictureBox LogoPictureBox;
         private System.Windows.Forms.Timer SplashScreenTimer;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
