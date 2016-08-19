@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 /*
  * ==================================================================================================
  * App Name: Movie Bonanza App
@@ -17,7 +16,7 @@ using System.Windows.Forms;
  * Student#: 300869273
  * Date Modified: August 17, 2016
  * Description: Movie app work in progress
- * Version: 0.0.4 - Added MoviebonanzaAboutBox and added some event handlers to OrderForm.
+ * Version: 0.0.5 - Added functionality to OrderForm (excluding back/stream buttons).
  * ==================================================================================================
  */
 namespace MovieBonanzaApp
@@ -88,7 +87,7 @@ namespace MovieBonanzaApp
             UpdateYourSelectionGroupBox();
             SelectedMovieInfo.Add(MovieTitleTextBox.Text);
             SelectedMovieInfo.Add(MovieCategoryTextBox.Text);
-            SelectedMovieInfo.Add(MovieCostTextBox.Text);
+            SelectedMovieInfo.Add(MovieCostTextBox.Text.Remove(0,1));
             if (!(SelectedMovieInfo.Contains("")))
             {
                 NextButton.Enabled = true;
@@ -112,7 +111,16 @@ namespace MovieBonanzaApp
         private void NextButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Program.orderForm.Show();
+            // try-catch is to account for the case where OrderForm is closed (by the cancel button)
+            try
+            {
+                Program.orderForm.Show();
+            }
+            catch
+            {
+                Program.orderForm = new OrderForm();
+                Program.orderForm.Show();
+            } 
         }
 
         /** <summary>
@@ -125,14 +133,14 @@ namespace MovieBonanzaApp
         */
         private void UpdateYourSelectionGroupBox()
         {
-            if (!(MovieDropDownList.SelectedItem.ToString()).Equals(""))
+            if (!(MovieDropDownList.SelectedItem.ToString()).Equals("")) //fires if a movie is considered "selected"
             {
-                MovieTitleTextBox.Text = String.Format(MovieDropDownList.SelectedItem.ToString());
-                MovieCategoryTextBox.Text = String.Format(GetMovieCategory(MovieDropDownList.SelectedItem.ToString()));
-                MovieCostTextBox.Text = String.Format(GetCategoryCost(MovieCategoryTextBox.Text));
-                GetMovieImage(MovieDropDownList.SelectedItem.ToString());
+                MovieTitleTextBox.Text = (MovieDropDownList.SelectedItem.ToString());
+                MovieCategoryTextBox.Text = (GetMovieCategory(MovieDropDownList.SelectedItem.ToString()));
+                MovieCostTextBox.Text = String.Format("$" +(GetCategoryCost(MovieCategoryTextBox.Text)));
+                this.GetMovieImage(MovieDropDownList.SelectedItem.ToString());
             }
-            else
+            else //fires when there is no movie selected
             {
                 MovieTitleTextBox.Text = "";
                 MovieCategoryTextBox.Text = "";
