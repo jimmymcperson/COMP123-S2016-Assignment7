@@ -98,7 +98,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(271, 17);
             this.VersionLabel.TabIndex = 0;
-            this.VersionLabel.Text = "Version: 0.0.5";
+            this.VersionLabel.Text = "Version: 0.1.0";
             this.VersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProgrammerLabel

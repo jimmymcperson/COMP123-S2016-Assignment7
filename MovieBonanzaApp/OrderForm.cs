@@ -8,15 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 /*
  * ==================================================================================================
  * App Name: Movie Bonanza App
  * Author: Jonathan Hao
  * Student#: 300869273
- * Date Modified: August 17, 2016
- * Description: Movie app work in progress
- * Version: 0.0.5 - Added functionality to OrderForm (excluding back/stream buttons).
+ * Date Created: August 19, 2016
+ * Description: This app streams movies to your device.  It also allows you to order movies.
+ * Version: 0.1.0 - Completed program.
  * ==================================================================================================
  */
 namespace MovieBonanzaApp
@@ -78,6 +77,10 @@ namespace MovieBonanzaApp
         */
         private void Stream_Click(object sender, EventArgs e)
         {
+            // store values in list for use
+            Program.selectionForm.SelectedMovieInfo.Add(GrandTotalTextBox.Text);
+            Program.selectionForm.SelectedMovieInfo.Add(MovieSelectedTitleTextBox.Text);
+
             this.Hide();
             Program.streamForm.Show();
         }
@@ -94,7 +97,7 @@ namespace MovieBonanzaApp
         */
         private void Print_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Print", "Your order is printing.", MessageBoxButtons.OK);
+            MessageBox.Show("Your order is printing.", "Print", MessageBoxButtons.OK);
         }
 
         /** <summary>
@@ -291,6 +294,22 @@ namespace MovieBonanzaApp
                 AdditionalChargeLabel.Show();
             }
             CalculateCosts();
+        }
+
+        /** <summary>
+        * This method hides the current form and shows the previous 
+        * form when the back button is clicked.
+        * </summary>
+        * @method BackButton_Click
+        * @params {object} sender
+        * @params {EventArgs} e
+        * @private
+        * @returns {void}
+        */ 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.selectionForm.Show();
         }
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
